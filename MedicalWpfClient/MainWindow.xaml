@@ -1,0 +1,31 @@
+﻿<Window x:Class="MedicalWpfClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MedicalWpfClient"
+        mc:Ignorable="d"
+        Title="医疗设备Wpf客户端" Height="300" Width="300" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <StackPanel Margin="10" Orientation="Vertical" x:Name="boxBioValues">
+            <Label x:Name="labHost" Content="服务器" Margin="5"/>
+            <Button x:Name="btnStartSample" Content="开始采样" Width="200" HorizontalAlignment="Left" Margin="5"/>
+            <StackPanel Height="30" Orientation="Horizontal">
+                <Label x:Name="labTimeCaption" Content="时间" Margin="5,0,5,0" VerticalAlignment="Center"/>
+                <TextBlock x:Name="labTimeContent" Text="{Binding CreateTime, StringFormat={}{0:yyyy-MM-dd HH:mm:ss}}" Margin="5,0,5,0" VerticalAlignment="Center"/>
+            </StackPanel>
+            <WrapPanel Margin="5" >
+                <StackPanel Orientation="Vertical">
+                    <Label x:Name="labHRCaption" Content="心率" Margin="5"/>
+                    <Label x:Name="labHRContent" Content="{Binding HR}" FontSize="20" FontWeight="Bold" Margin="5"/>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <Label x:Name="labSpO2Caption" Content="血氧" Margin="5"/>
+                    <Label x:Name="labSpO2Content" Content="{Binding SpO2}" FontSize="20" FontWeight="Bold" Margin="5"/>
+                </StackPanel>
+            </WrapPanel>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
